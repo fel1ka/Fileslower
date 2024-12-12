@@ -7,7 +7,7 @@ import threading
 MAX_FILE_SIZE = 2 * 1024 * 1024 * 1024
 CHUNK_SIZE = 1024 * 1024
 
-TOKEN = "7672677237:AAE72qOuVzpj9JAEBk1QACEVltxJVyoSN9o"
+TOKEN = input("Enter token: ")
 bot = telebot.TeleBot(TOKEN)
 
 download_state = {}
