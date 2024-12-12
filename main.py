@@ -26,7 +26,10 @@ def download_file_with_progress(url, output_path, chat_id, message_id):
             if chunk:
                 f.write(chunk)
                 downloaded_size += len(chunk)
-                percent = downloaded_size / total_size * 100
+                if total_size > 0:
+                    percent = downloaded_size / total_size * 100
+                else:
+                    percent = 0
                 bot.edit_message_text(chat_id=chat_id, message_id=message_id, text=f"Загружено: {percent:.2f}%")
 
     try:
